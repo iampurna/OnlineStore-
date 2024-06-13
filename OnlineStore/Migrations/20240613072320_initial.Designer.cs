@@ -11,8 +11,8 @@ using OnlineStore.Data;
 namespace OnlineStore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240607053956_AddCategoryTableDb")]
-    partial class AddCategoryTableDb
+    [Migration("20240613072320_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -42,6 +42,20 @@ namespace OnlineStore.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DisplayOrder = 23,
+                            Name = "Hero"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DisplayOrder = 27,
+                            Name = "Purna"
+                        });
                 });
 #pragma warning restore 612, 618
         }

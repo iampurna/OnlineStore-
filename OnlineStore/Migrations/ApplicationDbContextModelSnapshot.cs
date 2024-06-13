@@ -39,6 +39,20 @@ namespace OnlineStore.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DisplayOrder = 23,
+                            Name = "Hero"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DisplayOrder = 27,
+                            Name = "Purna"
+                        });
                 });
 #pragma warning restore 612, 618
         }
